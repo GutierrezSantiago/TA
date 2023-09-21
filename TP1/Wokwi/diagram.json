@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -6.86, "left": -165.9, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 3.22,
+      "left": 198.14,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -137.65,
+      "left": -69.13,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -129.88,
+      "left": -208.97,
+      "attrs": { "color": "red" }
+    },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 95.93, "left": 83.44, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -105.06, "left": 20.24, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": -1.06, "left": 164.56, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 187.53, "left": 255.06, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 118.47,
+      "left": -343.56,
+      "attrs": { "color": "black" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "relay1:VCC", "red", [ "h54.69", "v-36.71" ] ],
+    [ "esp:GND.1", "relay1:GND", "black", [ "h66.32", "v-17.21" ] ],
+    [ "pot1:VCC", "esp:VIN", "red", [ "v22.4", "h-278.71", "v182.33", "h48.57" ] ],
+    [ "pot1:GND", "esp:GND.2", "black", [ "v15.54", "h-232.91", "v171.06" ] ],
+    [ "pot1:SIG", "esp:D4", "gold", [ "v142.53", "h-102.51", "v15.07" ] ],
+    [ "esp:D2", "relay1:IN", "green", [ "h46.88", "v11.41", "h101.16" ] ],
+    [ "esp:D25", "led3:A", "orange", [ "h-16.69", "v-122.82" ] ],
+    [ "led3:C", "esp:GND.2", "black", [ "h-5.14", "v237.98", "h22.65", "v-7.96" ] ],
+    [ "led1:A", "vcc1:VCC", "gold", [ "v20.61", "h-48.98" ] ],
+    [ "led1:C", "relay1:COM", "gold", [ "v0" ] ],
+    [ "relay1:NO", "gnd1:GND", "black", [ "h0" ] ],
+    [ "esp:D5", "led2:C", "orange", [ "h0" ] ],
+    [ "btn1:1.r", "esp:D12", "orange", [ "v0" ] ],
+    [ "esp:3V3", "led2:A", "red", [ "h31.52", "v-247.29" ] ],
+    [ "esp:GND.2", "btn1:2.r", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
