@@ -26,7 +26,7 @@ volatile int potenciaLed;
 //const char *ssid = "";
 //const char *password = "";
 
-const String botToken = "6688137849:AAEd83Lyg8PjG1UQXkuNQTZyaNI7jQ_WRYo";
+const String botToken = "";
 const unsigned long botMTBS = 1000; //mean time between scan messages (Tiempo medio entre scans)
 unsigned long botLastScan;
 volatile int banderaModoMensaje; // Bandera para saber si se esta en modo mensaje para el display

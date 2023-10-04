@@ -7,7 +7,7 @@ const char * SSID = "";
 const char * PASS = "";
 
 // Telegram Bot
-const String TOKEN = "6518386533:AAESv-kdXYeVHBaYm-ECwd5jvoA7RDZ4KcY";
+const String TOKEN = "";
 const unsigned long MTBS = 1000;  // mean time between scan messages (Tiempo medio entre scans)
 
 // Telegram Bot Commands
